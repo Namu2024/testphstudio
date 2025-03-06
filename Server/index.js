@@ -27,7 +27,7 @@ const LOCAL_IP = getLocalIP();
 
 // ✅ Allowed Origins - Fix CORS Issue
 const allowedOrigins = [
-  "https://siteproject-front.vercel.app", // ✅ Corrected
+  "https://sdcstudio-front.vercel.app/", // ✅ Corrected
   "http://localhost:3000",  // ✅ Localhost for Development
 ];
 
@@ -39,7 +39,7 @@ app.use(cors({
       callback(new Error("Not allowed by CORS"));
     }
   },
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
