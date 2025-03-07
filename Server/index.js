@@ -8,15 +8,21 @@ import authRoutes from "./routes/authRoutes.js";
 dotenv.config();
 
 const app = express();
-app.use(express.json()); 
-app.use (cors());
+app.use(express.json());
+app.use(cors());
 
 mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.log("❌ MongoDB Error:", err));
 
 app.use("/api/auth", authRoutes);
+
+// ⚠️ STATIC FILES SERVE KARNE WALE CODE KO REMOVE KARO
+// app.use(express.static("public")); ❌ Ye hata do
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
