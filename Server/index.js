@@ -21,8 +21,7 @@ mongoose
 
 app.use("/api/auth", authRoutes);
 
-// ⚠️ STATIC FILES SERVE KARNE WALE CODE KO REMOVE KARO
-// app.use(express.static("public")); ❌ Ye hata do
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

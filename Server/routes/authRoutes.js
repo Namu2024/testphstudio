@@ -8,7 +8,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
 
 // ✅ Debugging Middleware to Check Request Body
 router.use((req, res, next) => {
-  console.log("Incoming Request:", req.body);
+  
   next();
 });
 
