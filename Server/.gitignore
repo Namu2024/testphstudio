@@ -1,3 +1,4 @@
-node_modules
+Server/.env
 .env
-*.log
+# Node.js dependencies
+node_modules
